@@ -1,0 +1,19 @@
+machine:
+  network:
+    interfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 10.20.20.21/16
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 10.20.0.1
+        vip:
+          ip: 10.20.20.20
+    nameservers:
+      - 10.20.0.10
+---
+apiVersion: v1alpha1
+kind: HostnameConfig
+hostname: thrall
+auto: off

@@ -1,0 +1,17 @@
+machine:
+  network:
+    interfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 10.20.20.22/16
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 10.20.0.1
+    nameservers:
+      - 10.20.0.10
+---
+apiVersion: v1alpha1
+kind: HostnameConfig
+hostname: cairne
+auto: off
